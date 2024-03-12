@@ -1,4 +1,5 @@
 apiVersion: v1
+i
 kind: Pod
 metadata:
   name: pod-node-affinity
@@ -14,3 +15,7 @@ containers:
     - command: ["sleep", "3600"]
       name: pod-node-affinity-container
       image: busybox
+volumes:
+    - name: site-data
+      persistentVolumeClaim:
+        claimName: my-lamp-site-data
